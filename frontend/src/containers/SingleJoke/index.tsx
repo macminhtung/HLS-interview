@@ -1,7 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { useEffect, useState, useCallback, useMemo } from 'react';
-import { SingleJokeWrapper, HeadWrapper, JokeContentWrapper, GroupButtonWrapper, FooterWrapper } from './styles';
+import { SingleJokeWrapper, HeadWrapper, TitleWrapper, JokeContentWrapper, GroupButtonWrapper, FooterWrapper } from './styles';
 import { listJokes } from 'utils/listJokes';
 import { getCookie, setCookie } from "utils/funcs";
+
+const logo = require('logo.jpg');
+const avatar = require('avatar.png');
 
 const JOKE_NAME_KEY = "JOKE_NAME_KEY";
 const DATE_JOKE_NAME_KEY = "DATE_JOKE_NAME_KEY";
@@ -38,9 +42,21 @@ const SingleJoke = () => {
   return (
     <SingleJokeWrapper>
       <HeadWrapper>
+        <img src={logo} />
+        <div>
+          <div>
+            <p>Handicrafted by</p>
+            <p>Jim HLS</p>
+          </div>
+          <div>
+            <img src={avatar} />
+          </div>
+        </div>
+      </HeadWrapper>
+      <TitleWrapper>
         <p>A joke a day keeps the doctor away</p>
         <small>If you joke wrong way, your teeth have to pay. (Serious)</small>
-      </HeadWrapper>
+      </TitleWrapper>
       <JokeContentWrapper>
         <p style={{ textAlign: listRestIndexes.length ? "left" : "center" }}>
           {listRestIndexes.length ? listJokes[listRestIndexes[0]] : "That's all the jokes for today! Come back another day!"}

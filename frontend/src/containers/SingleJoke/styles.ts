@@ -8,6 +8,64 @@ export const SingleJokeWrapper = styled.div`
 
 export const HeadWrapper = styled.div`
   display: flex;
+  width: 70vw;
+  margin: 10px auto;
+  img {
+    width: 60px;
+    height: 60px;
+  }
+  > div {
+    display: flex;
+    margin-left: auto;
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        margin: 0;
+        color: #000000;
+        &:first-child {
+          color: #656565;
+          font-style: italic;
+        }
+      }
+      img {
+        border-radius: 50%;
+        margin-left: 10px;
+      }
+    }
+  }
+  @media screen and (max-width: 550px) {
+    align-items: center;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+    > div {
+      display: flex;
+      margin-left: auto;
+      flex-direction: column-reverse;
+      align-items: center;
+      > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        p {
+          font-size: 12px;
+          &:first-child {
+            display: none;
+          }
+        }
+        img {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+`;
+
+export const TitleWrapper = styled.div`
+  display: flex;
   flex-direction: column;
   background-color: #29b363;
   padding: 20px;
